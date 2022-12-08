@@ -14,5 +14,16 @@ namespace W6_1110
             subcribers.Add(o);
             return true;
         }
+        public bool UnSubscribe(Observer o) { 
+            subcribers.Remove(o);
+            return true;
+        }
+        public void NotifyAll()
+        {
+            foreach (Observer o in subcribers)
+            {
+                o.Notify(this);
+            }
+        }
     }
 }

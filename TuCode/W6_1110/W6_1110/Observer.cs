@@ -7,5 +7,9 @@ namespace W6_1110
 {
     public class Observer
     {
+        internal void Notify(Subject subject)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
