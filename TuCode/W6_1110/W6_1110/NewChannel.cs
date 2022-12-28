@@ -28,11 +28,19 @@ namespace W6_1110
         {
           articles.Add(article.ID, article);
           NotifyAll(article);
+            return true;
         }
+
+        private ContentChecker contentChecker = new DefaultContentChecker();
 
         private void NotifyAll(Article article)
         {
-            throw new NotImplementedException();
-            //29:04
+           foreach (int id in articles.Keys)
+            {
+                if (contentChecker.isAppropriate(article, subscibers[id], preferences[id]))
+                {
+                    subscibers[id].Notify(this, article);
+                }
+            }
         }
 }

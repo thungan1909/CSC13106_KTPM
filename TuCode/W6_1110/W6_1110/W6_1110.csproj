@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Article.cs" />
+    <Compile Include="ContentChecker.cs" />
+    <Compile Include="DefaultContentChecker.cs" />
     <Compile Include="Member.cs" />
     <Compile Include="NewChannel.cs" />
     <Compile Include="Observer.cs" />
