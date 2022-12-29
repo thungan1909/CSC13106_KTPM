@@ -14,7 +14,7 @@ namespace W6_1110
         public bool Subscribe(Member member, List<String> keywords)
         {
             subscibers.Add(member.ID, member);
-            preferences.Add(member.ID,keywords);
+            preferences.Add(member.ID, keywords);
             return true;
         }
 
@@ -24,23 +24,52 @@ namespace W6_1110
             preferences.Remove(ID);
             return true;
         }
-       public bool PostArticle(Article article, Member author)
+        public bool PostArticle(Article article, Member author)
         {
-          articles.Add(article.ID, article);
-          NotifyAll(article);
-            return true;
+            if (IsMember(author))
+            {
+                articles.Add(article.ID, article);
+                NotifyAll(article);
+                return true;
+            }
+            return false;
+
+        }
+
+        private bool IsMember(Member author)
+        {
+            return subscibers.ContainsKey(author.ID);
         }
 
         private ContentChecker contentChecker = new DefaultContentChecker();
+        public string channelName;
+
+        public NewsChannel(string channelName)
+        {
+            this.channelName = channelName;
+        }
 
         private void NotifyAll(Article article)
         {
-           foreach (int id in articles.Keys)
+            foreach (int id in articles.Keys)
             {
                 if (contentChecker.isAppropriate(article, subscibers[id], preferences[id]))
                 {
-                    subscibers[id].Notify(this, article);
+                    //subscibers[id].Notify(this, article);
+
+                    EnqueueNotification(subscibers[id], article);
                 }
             }
         }
+
+        MessageQueue mq = new MessageQueue(this);
+        private void EnqueueNotification(Member member, Article article)
+        {
+            mq.Queue(member, article);
+            if (mq.NeedToFlush())
+            {
+                mq.Flush();
+            }
+        }
+    }
 }

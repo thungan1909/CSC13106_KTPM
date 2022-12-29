@@ -47,6 +47,7 @@
     <Compile Include="ContentChecker.cs" />
     <Compile Include="DefaultContentChecker.cs" />
     <Compile Include="Member.cs" />
+    <Compile Include="MessageQueue.cs" />
     <Compile Include="NewChannel.cs" />
     <Compile Include="Observer.cs" />
     <Compile Include="Program.cs" />

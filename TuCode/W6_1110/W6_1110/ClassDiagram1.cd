@@ -21,18 +21,18 @@
       <FileName>Observer.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="W6_1110.NewsChannel">
-    <Position X="1" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAgAUAAAAAAAAAAAAAAAAAAAAAACAABAQAAAAAAAAAA=</HashCode>
-      <FileName>NewChannel.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="W6_1110.Member">
     <Position X="3.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgIAAAAAAAAAAAAAAAgBAAAAAAAAAAAA=</HashCode>
       <FileName>Member.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="W6_1110.NewsChannel">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAUAAAgAAAAAAAAAAAAIAAAAAKAAJAQAAAAAAAAAA=</HashCode>
+      <FileName>NewChannel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
